@@ -39,7 +39,7 @@ export default function DetectionForm() {
       const formData = new FormData();
       Array.from(videos).forEach((video) => formData.append("videos", video));
       const response = await axios.post(
-        "http://127.0.0.1:8000/predict-videos",
+        "https://primary-problem-guh.sgp.dom.my.id/predict-videos",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -54,7 +54,7 @@ export default function DetectionForm() {
       const formData = new FormData();
       Array.from(images).forEach((image) => formData.append("images", image));
       const response = await axios.post(
-        "http://127.0.0.1:8000/predict-images",
+        "https://primary-problem-guh.sgp.dom.my.id/predict-images",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -66,7 +66,7 @@ export default function DetectionForm() {
 
   const formMutation = useMutation({
     mutationFn: async (data: any) => {
-      const response = await axios.post("http://127.0.0.1:8000/predict", data);
+      const response = await axios.post("https://primary-problem-guh.sgp.dom.my.id/predict", data);
       return response.data;
     },
   });
